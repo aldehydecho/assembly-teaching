@@ -1,0 +1,263 @@
+
+i386
+
+
+
+
+
+push   %ebp
+mov    %esp,%ebp
+sub    $0x8,%esp
+call   8048324 <call_gmon_start>
+call   8048390 <frame_dummy>
+call   80484c0 <__do_global_ctors_aux>
+leave  
+ret    
+
+
+
+
+pushl  0x8049624
+jmp    *0x8049628
+add    %al,(%eax)
+
+
+
+jmp    *0x804962c
+push   $0x0
+jmp    80482b4 <_init+0x18>
+
+:
+jmp    *0x8049630
+push   $0x8
+jmp    80482b4 <_init+0x18>
+
+
+jmp    *0x8049634
+push   $0x10
+jmp    80482b4 <_init+0x18>
+
+
+
+
+xor    %ebp,%ebp
+pop    %esi
+mov    %esp,%ecx
+and    $0xfffffff0,%esp
+push   %eax
+push   %esp
+push   %edx
+push   $0x8048480
+push   $0x8048450
+push   %ecx
+push   %esi
+push   $0x80483c4
+call   80482d4 <__libc_start_main@plt>
+hlt    
+nop
+nop
+
+
+push   %ebp
+mov    %esp,%ebp
+push   %ebx
+call   804832d <call_gmon_start+0x9>
+pop    %ebx
+add    $0x12f3,%ebx
+push   %eax
+mov    0x18(%ebx),%eax
+test   %eax,%eax
+je     8048341 <call_gmon_start+0x1d>
+call   *%eax
+mov    -0x4(%ebp),%ebx
+leave  
+ret    
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+
+:
+push   %ebp
+mov    %esp,%ebp
+sub    $0x8,%esp
+cmpb   $0x0,0x804963c
+jne    804838c <__do_global_dtors_aux+0x3c>
+mov    0x804953c,%eax
+mov    (%eax),%edx
+test   %edx,%edx
+je     8048385 <__do_global_dtors_aux+0x35>
+lea    0x0(%esi),%esi
+add    $0x4,%eax
+mov    %eax,0x804953c
+call   *%edx
+mov    0x804953c,%eax
+mov    (%eax),%edx
+test   %edx,%edx
+jne    8048370 <__do_global_dtors_aux+0x20>
+movb   $0x1,0x804963c
+leave  
+ret    
+mov    %esi,%esi
+
+
+push   %ebp
+mov    %esp,%ebp
+sub    $0x8,%esp
+mov    0x804961c,%eax
+test   %eax,%eax
+je     80483c0 <frame_dummy+0x30>
+mov    $0x0,%eax
+test   %eax,%eax
+je     80483c0 <frame_dummy+0x30>
+sub    $0xc,%esp
+push   $0x804961c
+call   0 <_init-0x804829c>
+add    $0x10,%esp
+nop
+lea    0x0(%esi,%eiz,1),%esi
+mov    %ebp,%esp
+pop    %ebp
+ret    
+
+
+push   %ebp
+mov    %esp,%ebp
+sub    $0x18,%esp
+and    $0xfffffff0,%esp
+mov    $0x0,%eax
+sub    %eax,%esp
+movl   $0x11e67,-0x4(%ebp)
+movl   $0x5b1270,-0x8(%ebp)
+movl   $0x6,-0x10(%ebp)
+sub    $0xc,%esp
+push   $0x8048514
+call   80482e4 <printf@plt>
+add    $0x10,%esp
+sub    $0x8,%esp
+lea    -0xc(%ebp),%eax
+push   %eax
+push   $0x8048522
+call   80482c4 <scanf@plt>
+add    $0x10,%esp
+mov    -0x8(%ebp),%eax
+cmp    -0xc(%ebp),%eax
+jne    8048432 <main+0x6e>
+mov    -0x10(%ebp),%edx
+lea    -0x4(%ebp),%eax
+xor    %edx,(%eax)
+sub    $0x8,%esp
+pushl  -0x4(%ebp)
+push   $0x8048525
+call   80482e4 <printf@plt>
+add    $0x10,%esp
+jmp    8048442 <main+0x7e>
+sub    $0xc,%esp
+push   $0x8048529
+call   80482e4 <printf@plt>
+add    $0x10,%esp
+mov    $0x0,%eax
+leave  
+ret    
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+
+
+push   %ebp
+mov    %esp,%ebp
+push   %esi
+push   %ebx
+xor    %ebx,%ebx
+call   804829c <_init>
+mov    $0x8049534,%eax
+sub    $0x8049534,%eax
+sar    $0x2,%eax
+cmp    %eax,%ebx
+jae    804847c <__libc_csu_init+0x2c>
+mov    %eax,%esi
+nop
+call   *0x8049534(,%ebx,4)
+inc    %ebx
+cmp    %esi,%ebx
+jb     8048470 <__libc_csu_init+0x20>
+pop    %ebx
+pop    %esi
+pop    %ebp
+ret    
+
+
+push   %ebp
+mov    $0x8049534,%eax
+sub    $0x8049534,%eax
+sar    $0x2,%eax
+mov    %esp,%ebp
+sub    $0x8,%esp
+mov    %ebx,-0x4(%ebp)
+test   %eax,%eax
+lea    -0x1(%eax),%ebx
+jne    80484a8 <__libc_csu_fini+0x28>
+mov    -0x4(%ebp),%ebx
+mov    %ebp,%esp
+pop    %ebp
+jmp    80484f0 <_fini>
+call   *0x8049534(,%ebx,4)
+mov    %ebx,%eax
+dec    %ebx
+test   %eax,%eax
+jne    80484a8 <__libc_csu_fini+0x28>
+jmp    804849d <__libc_csu_fini+0x1d>
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+
+:
+push   %ebp
+mov    %esp,%ebp
+push   %ebx
+push   %edx
+mov    0x804960c,%eax
+cmp    $0xffffffff,%eax
+mov    $0x804960c,%ebx
+je     80484ec <__do_global_ctors_aux+0x2c>
+lea    0x0(%esi),%esi
+lea    0x0(%edi),%edi
+sub    $0x4,%ebx
+call   *%eax
+mov    (%ebx),%eax
+cmp    $0xffffffff,%eax
+jne    80484e0 <__do_global_ctors_aux+0x20>
+pop    %eax
+pop    %ebx
+pop    %ebp
+ret    
+
+
+
+
+push   %ebp
+mov    %esp,%ebp
+push   %ebx
+call   80484f9 <_fini+0x9>
+pop    %ebx
+add    $0x1127,%ebx
+push   %edx
+call   8048350 <__do_global_dtors_aux>
+mov    -0x4(%ebp),%ebx
+leave  
+ret    
